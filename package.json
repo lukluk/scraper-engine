@@ -1,0 +1,23 @@
+{
+  "name": "scraper-engine",
+  "private": false,
+  "version": "0.0.9",
+  "description": "scraper framework",
+  "dependencies": {
+    "string": "~1.8.0",
+    "cheerio": "0.15.0",
+    "request": "2.34.0",
+    "express": ""
+  },
+  "main": "lib/listingScraperAPI",
+  "repository": "",
+  "author": {
+    "name": "lukluk",
+    "email": "luklukaha@gmail.com"
+  },
+  "license": "GPL",
+  "readmeFilename": "README.md",
+  "_id": "scraper-engine@0.0.8",
+  "_shasum": "37be00596f93b38cec2d368524736b19847893f3",
+  "_from": "scraper-engine@"
+}
