@@ -1,0 +1,26 @@
+{
+  "name": "scraper-engine",
+  "private": false,
+  "version": "8.0.1",
+  "description": "scraper framework",
+  "dependencies": {
+    "cheerio": "0.15.0",
+    "express": "",
+    "request": "2.34.0",
+    "string": "^1.8.1",
+    "nice-json2csv" : ""
+  },
+  "main": "lib/listingScraperAPI",
+  "repository": "",
+  "author": {
+    "name": "lukluk",
+    "email": "luklukaha@gmail.com"
+  },
+  "license": "GPL",
+  "maintainers": [
+    {
+      "name": "lukluk",
+      "email": "luklukaha@gmail.com"
+    }
+  ]
+}
