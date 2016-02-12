@@ -1,7 +1,7 @@
 {
   "name": "scraper-engine",
   "private": false,
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "scraper framework",
   "dependencies": {
     "cheerio": "0.15.0",
