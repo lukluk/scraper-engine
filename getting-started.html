@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Scraper-engine by lukluk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Scraper-engine</h1>
+      <h2 class="project-tagline">Instant Build Scraper API</h2>
+      <a href="scraper-engine.com/tutorial.html" class="btn">Tutorial</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="scraper-engine" class="anchor" href="#scraper-engine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scraper engine</h1>
+
+<blockquote>
+<p>complate solutions for build scraper API service, easy to use </p>
+</blockquote>
+
+<p>version 8.0.0 </p>
+
+<p>output.json and output.csv</p>
+
+<h1>
+<a id="tutorial" class="anchor" href="#tutorial" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>tutorial</h1>
+
+<p><a href="https://youtu.be/j_PJkSVx7n4">https://youtu.be/j_PJkSVx7n4</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=HHP2NyEJq4w">https://www.youtube.com/watch?v=HHP2NyEJq4w</a></p>
+
+<h1>
+<a id="how-to-install" class="anchor" href="#how-to-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to install</h1>
+
+<pre><code>npm install scraper-engine
+</code></pre>
+
+<p>create app.js</p>
+
+<pre><code>var port=4000;
+require('scraper-engine').start(__dirname,port);
+</code></pre>
+
+<pre><code>$ node app.js
+Scraper Engine Started (port 4000)...
+</code></pre>
+
+<p>and open your browser</p>
+
+<p>http://localhost:4000/output.json?site=<strong>controller</strong></p>
+
+<h2>
+<a id="example-controller" class="anchor" href="#example-controller" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>example controller</h2>
+
+<p>http://localhost:4000/output.json?site=olx
+or 
+http://localhost:4000/output.csv?site=olx</p>
+
+<p>example : Walmart Category controller</p>
+
+<pre><code>var S = require('string');
+exports.scraper = {
+    name: 'OLX',
+    url: function (index) {
+        return "http://www.walmart.com/browse/toys/action-figures/4171_4172_133130?page="+index+"&amp;cat_id=4171_4172_133130"
+    },
+    next:function($,currentindex){
+        if(currentindex&gt;=5){
+            return false
+        }else{
+            return true
+        }
+    },
+    rows: function ($) {
+        return $('.tile-grid-unit-wrapper');
+    },
+    fields: {
+        title: function ($) {
+            return S($.find('.tile-heading').text()).trim().s;
+        },
+        price: function ($) {
+            return S($.find('.tile-price').text().replace('$','')).trim().s;
+        },
+        image: function ($) {
+            return $.find('.product-image').attr('src');
+        },
+        urlproduct: function ($) {
+            return $.find('.js-product-title').attr('href');
+        }
+
+
+    }
+
+}
+</code></pre>
+
+<p>Example: Olx Controller</p>
+
+<pre><code>var S = require('string');
+exports.scraper = {
+    name: 'OLX',
+    url: function () {
+        return "http://olx.co.id/all-results/q-batu-bacan/"
+    },
+    rows: function ($) {
+        return $('.offer');
+    },
+    fields: {
+        title: function ($) {
+            return S($.find('.link.linkWithHash').text()).trim().s;
+        },
+        price: function ($) {
+            return S($.find('.price').text()).trim().s;
+        },
+        image: function ($) {
+            return $.find('.linkWithHash img').attr('src');
+        }
+
+
+    }
+
+}
+</code></pre>
+
+<h1>
+<a id="using-request-parameter" class="anchor" href="#using-request-parameter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>using request parameter</h1>
+
+<p>Example: Olx Controller part 2 </p>
+
+<pre><code>var S = require('string');
+var keyword="";
+exports.scraper = {
+    name: 'OLX-pass-url',
+    url: function () {
+        return "http://olx.co.id/all-results/q-"+keyword+"/"
+    },
+    setup:function(req){
+        keyword=req.query.keyword
+    },
+    rows: function ($) {
+        return $('.offer');
+    },
+    fields: {
+        title: function ($) {
+            return S($.find('.link.linkWithHash').text()).trim().s;
+        },
+        price: function ($) {
+            return S($.find('.price').text()).trim().s;
+        },
+        image: function ($) {
+            return $.find('.linkWithHash img').attr('src');
+        }
+
+
+    }
+
+}
+</code></pre>
+
+<h1>
+<a id="scraping-all-pages-detail" class="anchor" href="#scraping-all-pages-detail" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>scraping all pages detail</h1>
+
+<p>Example: Olx Controller part 3</p>
+
+<pre><code>var S = require('string');
+var keyword="";
+exports.scraper = {
+    name: 'OLX-all-pages',
+    url: function () {
+        return "http://olx.co.id/all-results/q-"+keyword+"/"
+    },
+    setup:function(req){
+        keyword=req.query.keyword
+    },
+    list: function ($) {
+        var urls=[];
+        $('.offer').each(function(){
+            ulrs.push($(this).find('.link.linkWithHash').attr('href'))
+        })
+        return urls;
+    },
+    fields: {
+        title: function ($) {
+            return $.find('.offerheadinner h1').text()
+        },
+        price: function ($) {
+            return $.find('.pricelabel strong').text()
+        },
+        seller: function ($) {
+            return $.find('.userdetails .brkword').text();
+        }
+
+
+    }
+
+}
+</code></pre>
+
+<h1>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h1>
+
+<h2>
+<a id="luklukahagmailcom" class="anchor" href="#luklukahagmailcom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="mailto:luklukaha@gmail.com">luklukaha@gmail.com</a>
+</h2>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/lukluk/scraper-engine">Scraper-engine</a> is maintained by <a href="https://github.com/lukluk">lukluk</a>.</span>
+
+
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
