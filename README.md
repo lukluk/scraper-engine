@@ -25,6 +25,10 @@ var app = express();
 var nu = require('nu-widget');
 require('scraper-engine');
 
+// require extensions
+require('example_module_extensions');
+
+
 app.get('/:site', function(req, res) {
     var site = req.params.site;
     nu.scraperEngine({
