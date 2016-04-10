@@ -1,16 +1,18 @@
 {
   "name": "scraper-engine",
   "private": false,
-  "version": "8.0.4",
+  "version": "9.0.3",
   "description": "scraper framework",
   "dependencies": {
     "cheerio": "0.15.0",
     "express": "",
+    "nice-json2csv": "",
+    "node-horseman": "^3.0.0",
     "request": "2.34.0",
     "string": "^1.8.1",
-    "nice-json2csv" : ""
+    "tough-cookie-filestore": "0.0.1"
   },
-  "main": "lib/listingScraperAPI",
+  "main": "scraper-engine",
   "repository": "",
   "author": {
     "name": "lukluk",
