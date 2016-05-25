@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      "scraper-engine",
+      "/Users/lukluksantoso/Documents/projects/mahanesia"
+    ]
+  ],
+  "_from": "scraper-engine@latest",
+  "_id": "scraper-engine@9.0.5",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/scraper-engine",
+  "_nodeVersion": "5.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/scraper-engine-9.0.5.tgz_1463330853591_0.8208181906957179"
+  },
+  "_npmUser": {
+    "email": "luklukaha@gmail.com",
+    "name": "lukluk"
+  },
+  "_npmVersion": "3.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "scraper-engine",
+    "raw": "scraper-engine",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_shasum": "24e999a3d37ddd67ae98114a167ca98865485c46",
+  "_shrinkwrap": null,
+  "_spec": "scraper-engine",
+  "_where": "/Users/lukluksantoso/Documents/projects/mahanesia",
+  "author": {
+    "email": "luklukaha@gmail.com",
+    "name": "lukluk"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cheerio": "0.15.0",
+    "express": "",
+    "localStorage": "^1.0.3",
+    "multer": "^1.1.0",
+    "nice-json2csv": "",
+    "node-horseman": "^3.0.0",
+    "request": "2.34.0",
+    "string": "^1.9.1",
+    "tough-cookie-filestore": "0.0.1"
+  },
+  "description": "scraper framework",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "24e999a3d37ddd67ae98114a167ca98865485c46",
+    "tarball": "https://registry.npmjs.org/scraper-engine/-/scraper-engine-9.0.5.tgz"
+  },
+  "gitHead": "11fc34c32fceb6ce18a566ff7cf34086ad0ea50b",
+  "license": "GPL",
+  "main": "scraper-engine",
+  "maintainers": [
+    {
+      "name": "lukluk",
+      "email": "luklukaha@gmail.com"
+    }
+  ],
+  "name": "scraper-engine",
+  "optionalDependencies": {},
+  "private": false,
+  "readme": "ERROR: No README data found!",
+  "repository": "",
+  "scripts": {},
+  "version": "9.0.7"
+}
