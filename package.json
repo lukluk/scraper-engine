@@ -2,25 +2,63 @@
   "_args": [
     [
       "scraper-engine",
+      "/Users/lukluksantoso"
+    ],
+    [
+      "scraper-engine",
       "/Users/lukluksantoso/Documents/projects/mahanesia"
     ]
   ],
   "_from": "scraper-engine@latest",
-  "_id": "scraper-engine@9.0.5",
+  "_id": "scraper-engine@9.0.7",
   "_inCache": true,
   "_installable": true,
   "_location": "/scraper-engine",
-  "_nodeVersion": "5.6.0",
+  "_nodeVersion": "4.2.4",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/scraper-engine-9.0.5.tgz_1463330853591_0.8208181906957179"
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/scraper-engine-9.0.7.tgz_1464175455653_0.9518773334566504"
   },
   "_npmUser": {
     "email": "luklukaha@gmail.com",
     "name": "lukluk"
   },
-  "_npmVersion": "3.6.0",
-  "_phantomChildren": {},
+  "_npmVersion": "2.14.12",
+  "_phantomChildren": {
+    "accepts": "1.2.13",
+    "array-flatten": "1.1.1",
+    "bytes": "2.3.0",
+    "content-disposition": "0.5.1",
+    "content-type": "1.0.2",
+    "cookie": "0.1.5",
+    "cookie-signature": "1.0.6",
+    "ctype": "0.5.3",
+    "debug": "2.2.0",
+    "depd": "1.1.0",
+    "escape-html": "1.0.3",
+    "etag": "1.7.0",
+    "finalhandler": "0.4.1",
+    "fresh": "0.3.0",
+    "http-errors": "1.4.0",
+    "iconv-lite": "0.4.13",
+    "json-stringify-safe": "5.0.1",
+    "merge-descriptors": "1.0.1",
+    "methods": "1.1.2",
+    "node-uuid": "1.4.7",
+    "on-finished": "2.3.0",
+    "parseurl": "1.3.1",
+    "path-to-regexp": "0.1.7",
+    "proxy-addr": "1.0.10",
+    "qs": "6.1.0",
+    "range-parser": "1.0.3",
+    "raw-body": "2.1.6",
+    "send": "0.13.1",
+    "serve-static": "1.10.2",
+    "tough-cookie": "2.2.2",
+    "type-is": "1.6.13",
+    "utils-merge": "1.0.0",
+    "vary": "1.0.1"
+  },
   "_requested": {
     "name": "scraper-engine",
     "raw": "scraper-engine",
@@ -30,19 +68,18 @@
     "type": "tag"
   },
   "_requiredBy": [
-    "/"
+    "#USER"
   ],
-  "_shasum": "24e999a3d37ddd67ae98114a167ca98865485c46",
   "_shrinkwrap": null,
   "_spec": "scraper-engine",
-  "_where": "/Users/lukluksantoso/Documents/projects/mahanesia",
+  "_where": "/Users/lukluksantoso",
   "author": {
     "email": "luklukaha@gmail.com",
     "name": "lukluk"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
-    "cheerio": "0.15.0",
+    "cheerio": "^0.15.0",
     "express": "",
     "localStorage": "^1.0.3",
     "multer": "^1.1.0",
@@ -56,8 +93,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "24e999a3d37ddd67ae98114a167ca98865485c46",
-    "tarball": "https://registry.npmjs.org/scraper-engine/-/scraper-engine-9.0.5.tgz"
+    "shasum": "2d702ee174707451e537db152bfd8b8a54f24e6a",
+    "tarball": "https://registry.npmjs.org/scraper-engine/-/scraper-engine-9.0.7.tgz"
   },
   "gitHead": "11fc34c32fceb6ce18a566ff7cf34086ad0ea50b",
   "license": "GPL",
